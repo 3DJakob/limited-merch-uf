@@ -15,7 +15,7 @@ const products = [{
   }, {
   "title": "Yeezy Oreo storlek 8.5us",
   "price": "",
-  "images": ["1OREO42.jpg","2OREO42.JPG"]
+  "images": ["1OREO42.JPG","2OREO42.jpg"]
 }]
 
 
