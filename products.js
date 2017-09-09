@@ -16,6 +16,10 @@ const products = [{
   "title": "Random sko storlek 41",
   "price": "25000kr",
   "images": ["watch.jpg"]
+}, {
+  "title": "Ett objekt med en väldigt lång titel",
+  "price": "25000kr",
+  "images": ["watch.jpg"]
 }]
 
 const animationDuration = 200
@@ -94,7 +98,7 @@ function info (index, product, cb) {
   const divider = document.createElement('div')
   const row = document.createElement('div')
   const priceElement = document.createElement('h1')
-  const titleElement = document.createElement('p')
+  const titleElement = document.createElement('h1')
   const imageContainer = document.createElement('div')
   const buttonContainer = document.createElement('div')
 
@@ -106,8 +110,8 @@ function info (index, product, cb) {
   imageContainer.style.width = product.images.length * 100 + '%'
   buttonContainer.id = 'buttonContainer'
 
-  row.appendChild(priceElement)
   row.appendChild(titleElement)
+  row.appendChild(priceElement)
   divider.appendChild(imageContainer)
   divider.appendChild(row)
 
