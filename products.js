@@ -142,7 +142,7 @@ function info (index, product, cb) {
 }
 
 function closeProduct (index, cb) {
-  var element = document.getElementById('divider')
+  const element = document.getElementById('divider')
 
   element.className = 'closed'
 
@@ -153,7 +153,7 @@ function closeProduct (index, cb) {
   }, animationDuration)
 }
 
-function slideshow(index) {
+function slideshow (index) {
   const imageContainer = document.getElementById('imageContainer')
   const imageLenght = imageContainer.childNodes[0].offsetWidth
   const position = imageLenght * index
