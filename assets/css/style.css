@@ -29,7 +29,7 @@ header h1 {
 }
 
 div.container {
-  max-width: 1200px;
+  max-width: 1040px;
   min-width: 360px;
   background-color: #ffece0;
   display: flex;
