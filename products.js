@@ -1,15 +1,19 @@
 'use strict'
 
 const products = [{
-  "title": "Yeezy Cream storlek 46",
+  "title": "Yeezy Cream storlek 11.5us",
   "price": "",
   "images": ["1CREAM46.jpg","2CREAM46.jpg","3CREAM46.jpg"]
 }, {
-  "title": "Yeezy Cream storlek 45",
+  "title": "Yeezy Cream storlek 11us",
   "price": "",
   "images": ["1CREAM45.jpg","2CREAM45.jpg","3CREAM45.jpg"]
 }, {
-  "title": "Yeezy Oreo storlek 42",
+  "title": "*****COMING SOON***** Yeezy Breds storlek 7.5us",
+  "price": "",
+  "images": ["1BREDS40.jpg"]
+  }, {
+  "title": "Yeezy Oreo storlek 8.5us",
   "price": "",
   "images": ["OREO42.jpg"]
 }]
