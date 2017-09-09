@@ -1,26 +1,19 @@
 'use strict'
 
 const products = [{
-  "title": "Yeezy Zebra storlek 43",
-  "price": "250kr",
-  "images": ["110.jpg", "1102.jpg"]
+  "title": "Yeezy Cream storlek 46",
+  "price": "",
+  "images": ["CREAM46.jpg"]
 }, {
-  "title": "Yeezy Zebra storlek 41",
-  "price": "250kr",
-  "images": ["212.jpg"]
+  "title": "Yeezy Cream storlek 45",
+  "price": "",
+  "images": ["CREAM45.jpg"]
 }, {
-  "title": "Random sko storlek 41",
-  "price": "25000kr",
-  "images": ["watch.jpg"]
-}, {
-  "title": "Random sko storlek 41",
-  "price": "25000kr",
-  "images": ["watch.jpg"]
-}, {
-  "title": "Ett objekt med en väldigt lång titel",
-  "price": "25000kr",
-  "images": ["watch.jpg"]
+  "title": "Yeezy Oreo storlek 42",
+  "price": "",
+  "images": ["OREO42.jpg"]
 }]
+
 
 const animationDuration = 200
 
