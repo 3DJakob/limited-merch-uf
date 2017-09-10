@@ -21,14 +21,17 @@ function render () {
   products.forEach(function (product, index) {
     const item = document.createElement('div')
     const title = document.createElement('h3')
+    const size = document.createElement('h3')
     item.className = 'item'
     item.id = index
     item.style.backgroundImage = 'url(assets/img/' + product.images[0] + ')'
     item.addEventListener('click', function () {
       openProduct(index, product)
     })
-    title.innerHTML = product.title
+    title.textContent = product.title
+    size.textContent = product.size
     item.appendChild(title)
+    item.appendChild(size)
     target.appendChild(item)
   })
 }
@@ -93,8 +96,8 @@ function info (index, product, cb) {
 
   divider.id = 'divider'
   row.className = 'row'
-  sizeElement.innerHTML = 'Storlek ' + product.size
-  titleElement.innerHTML = product.title
+  sizeElement.textContent = 'Storlek ' + product.size
+  titleElement.textContent = product.title
   imageContainer.id = 'imageContainer'
   imageContainer.style.width = product.images.length * 100 + '%'
   buttonContainer.id = 'buttonContainer'
