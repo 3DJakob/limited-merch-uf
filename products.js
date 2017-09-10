@@ -1,20 +1,20 @@
 'use strict'
 
 const products = [{
-  "title": "Yeezy Cream storlek 11.5us",
-  "price": "",
+  "title": "Yeezy Cream",
+  "size": "11.5us",
   "images": ["1CREAM46.jpg","2CREAM46.jpg","3CREAM46.jpg"]
 }, {
-  "title": "Yeezy Cream storlek 11us",
-  "price": "",
+  "title": "Yeezy Cream",
+  "size": "11us",
   "images": ["1CREAM45.jpg","2CREAM45.jpg","3CREAM45.jpg"]
 }, {
-  "title": "*****COMING SOON***** Yeezy Breds storlek 7.5us",
-  "price": "",
+  "title": "*****COMING SOON***** Yeezy Breds",
+  "size": "7.5us",
   "images": ["1BREDS40.jpg"]
   }, {
-  "title": "Yeezy Oreo storlek 8.5us",
-  "price": "",
+  "title": "Yeezy Oreo",
+  "size": "8.5us",
   "images": ["1OREO42.JPG","2OREO42.jpg"]
 }]
 
@@ -94,21 +94,21 @@ function info (index, product, cb) {
 
   const divider = document.createElement('div')
   const row = document.createElement('div')
-  const priceElement = document.createElement('h1')
+  const sizeElement = document.createElement('h1')
   const titleElement = document.createElement('h1')
   const imageContainer = document.createElement('div')
   const buttonContainer = document.createElement('div')
 
   divider.id = 'divider'
   row.className = 'row'
-  priceElement.innerHTML = product.price
+  sizeElement.innerHTML = 'Storlek ' + product.size
   titleElement.innerHTML = product.title
   imageContainer.id = 'imageContainer'
   imageContainer.style.width = product.images.length * 100 + '%'
   buttonContainer.id = 'buttonContainer'
 
   row.appendChild(titleElement)
-  row.appendChild(priceElement)
+  row.appendChild(sizeElement)
   divider.appendChild(imageContainer)
   divider.appendChild(row)
 
@@ -159,7 +159,7 @@ function slideshow (index) {
 
   const buttonContainer = document.getElementById('buttonContainer')
   buttonContainer.childNodes.forEach(function (child) {
-    child.style.backgroundColor = '#fff'
+    child.style.backgroundColor = 'rgba(0, 0, 0, 0)'
   })
-  buttonContainer.childNodes[index].style.backgroundColor = '#000'
+  buttonContainer.childNodes[index].style.backgroundColor = '#fff'
 }
