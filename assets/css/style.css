@@ -93,6 +93,8 @@ div.container {
 }
 
 div#divider {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #fff;
   overflow: hidden;
@@ -127,20 +129,21 @@ div#divider.closed {
 }
 
 #divider h1 {
-  margin-left: 10px !important;
+  margin: 20px;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 #divider .row {
-  align-items: baseline;
-  margin: 0;
   position: relative;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0;
   bottom: 700px;
-  padding-top: 20px;
+  height: 0;
 }
 
 #divider .row * {
-  margin: 0;
-  margin-right: 20px;
 }
 
 #divider .row h1 {
@@ -172,7 +175,8 @@ div#divider.closed {
   position: relative;
   display: flex;
   justify-content: center;
-  bottom: 100px;
+  bottom: 50px;
+  height: 0;
 }
 
 #divider #buttonContainer a {

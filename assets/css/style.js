@@ -137,6 +137,8 @@ export default StyleSheet.create({
         "marginTop": 10
     },
     "divdivider": {
+        "display": "flex",
+        "flexDirection": "column",
         "width": "100%",
         "backgroundColor": "#fff",
         "overflow": "hidden",
@@ -150,24 +152,24 @@ export default StyleSheet.create({
         "height": 0
     },
     "divider h1": {
-        "marginLeft": "10px !important"
+        "marginTop": 20,
+        "marginRight": 20,
+        "marginBottom": 0,
+        "marginLeft": 20,
+        "textAlign": "center"
     },
     "divider row": {
+        "position": "relative",
         "alignItems": "baseline",
+        "flexWrap": "wrap",
         "marginTop": 0,
         "marginRight": 0,
         "marginBottom": 0,
         "marginLeft": 0,
-        "position": "relative",
         "bottom": 700,
-        "paddingTop": 20
+        "height": 0
     },
-    "divider row *": {
-        "marginTop": 0,
-        "marginRight": 20,
-        "marginBottom": 0,
-        "marginLeft": 0
-    },
+    "divider row *": {},
     "divider row h1": {
         "backgroundColor": "rgba(0, 100, 160, 0.5)",
         "paddingTop": 0,
@@ -196,7 +198,8 @@ export default StyleSheet.create({
         "position": "relative",
         "display": "flex",
         "justifyContent": "center",
-        "bottom": 100
+        "bottom": 50,
+        "height": 0
     },
     "divider buttonContainer a": {
         "height": 15,
