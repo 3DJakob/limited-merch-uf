@@ -2,7 +2,7 @@ body {
   margin: 0;
   width: 100vw;
   min-height: 100vh;
-  background-color: rgb(255, 133, 133);
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,29 @@ body {
 h1, h2, h3, p, a, input {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #fff;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url("../img/background.jpg");
+  background-size:cover;
+  height: 100vh;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: soft-light;
 }
 
 header {
@@ -33,6 +56,7 @@ div.container {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .container .row {
@@ -70,19 +94,44 @@ div.container {
   align-items: flex-start;
 }
 
+.container div.item:before {
+  content: "";
+  position: relative;
+  top: 197px;
+  left: 75px;
+  z-index: -1;
+
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid rgba(100, 100, 100, 1);
+
+  transform: translateY(-20px);
+  transition: transform 0.2s;
+}
+
+.container .item * {
+  position: relative;
+  bottom: 20px; /*counteract border*/
+}
+
 .container .item.selected {
   border: 2px solid rgba(100, 100, 100, 1);
 }
 
+.container .item.selected:before {
+  transform: translateY(0);
+}
+
 .container .item:hover {
-  /*border: 2px solid rgba(255, 133, 133, 1);*/
   border: 2px solid rgba(100, 100, 100, 1);
 }
 
 .container .item h3 {
   padding: 0 4px;
   margin: 0;
-  background-color: rgba(255, 133, 133, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 }
 
@@ -160,13 +209,12 @@ div#divider.closed {
 }
 
 #divider .row h1:first-of-type {
-  background-color: rgba(255, 133, 133, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #divider #imageContainer {
   display: flex;
   height: 0;
-  /*overflow: hidden;*/
   position: relative;
   transition: 0.3s;
   z-index: 0;
@@ -206,4 +254,11 @@ div#divider.closed {
 
 #divider #arrowContainer a {
   padding: 20px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s;
+}
+
+#divider #arrowContainer a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }

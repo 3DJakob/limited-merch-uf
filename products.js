@@ -58,6 +58,7 @@ function openProduct (index, product) {
       currentlySelectedIndex = index
     })
   }
+  sliderIndex = 0
 }
 
 function info (index, product, cb) {
