@@ -1,28 +1,20 @@
+/* global fetch */
+
 'use strict'
 
-const products = [{
-  "title": "Yeezy Cream",
-  "size": "11.5us",
-  "images": ["1CREAM46.jpg","2CREAM46.jpg","3CREAM46.jpg"]
-}, {
-  "title": "Yeezy Cream",
-  "size": "11us",
-  "images": ["1CREAM45.jpg","2CREAM45.jpg","3CREAM45.jpg"]
-}, {
-  "title": "*****COMING SOON***** Yeezy Breds",
-  "size": "7.5us",
-  "images": ["1BREDS40.jpg"]
-  }, {
-  "title": "Yeezy Oreo",
-  "size": "8.5us",
-  "images": ["1OREO42.JPG","2OREO42.jpg"]
-}]
-
-
 const animationDuration = 200
+const productsPromise = fetch('products.json').then((res) => res.json())
 
 let currentlySelectedIndex = null
+let products = null
 let working = false
+
+window.startApp = function () {
+  productsPromise.then((_products) => {
+    products = _products
+    render()
+  })
+}
 
 function render () {
   const target = document.getElementById('product-container')
@@ -127,7 +119,7 @@ function info (index, product, cb) {
   })
   divider.appendChild(buttonContainer)
 
-  if (placement == products.length) {
+  if (placement === products.length) {
     target.parentNode.appendChild(divider)
   } else {
     target.parentNode.insertBefore(divider, target)
