@@ -1,0 +1,11 @@
+{
+  "name": "limited-merch-uf",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve"
+  },
+  "devDependencies": {
+    "serve": "^6.0.6"
+  }
+}

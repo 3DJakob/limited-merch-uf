@@ -8,6 +8,7 @@ const productsPromise = fetch('products.json').then((res) => res.json())
 let currentlySelectedIndex = null
 let products = null
 let working = false
+let sliderIndex = 0
 
 window.startApp = function () {
   productsPromise.then((_products) => {
@@ -88,24 +89,46 @@ function info (index, product, cb) {
   }
 
   const divider = document.createElement('div')
+  const imageContainer = document.createElement('div')
+  const overlayContainer = document.createElement('div')
   const row = document.createElement('div')
   const sizeElement = document.createElement('h1')
   const titleElement = document.createElement('h1')
-  const imageContainer = document.createElement('div')
   const buttonContainer = document.createElement('div')
+  const arrowContainer = document.createElement('div')
+  const leftArrow = document.createElement('a')
+  const leftArrowIcon = document.createElement('i')
+  const rightArrow = document.createElement('a')
+  const rightArrowIcon = document.createElement('i')
 
   divider.id = 'divider'
+  overlayContainer.id = 'overlayContainer'
   row.className = 'row'
   sizeElement.textContent = 'Storlek ' + product.size
   titleElement.textContent = product.title
   imageContainer.id = 'imageContainer'
   imageContainer.style.width = product.images.length * 100 + '%'
   buttonContainer.id = 'buttonContainer'
+  arrowContainer.id = 'arrowContainer'
+  leftArrow.addEventListener('click', function () {
+    slideshowArrow('left')
+  })
+  rightArrow.addEventListener('click', function () {
+    slideshowArrow('right')
+  })
+  leftArrowIcon.className = 'fa fa-3x fa-angle-left'
+  rightArrowIcon.className = 'fa fa-3x fa-angle-right'
 
   row.appendChild(titleElement)
   row.appendChild(sizeElement)
   divider.appendChild(imageContainer)
-  divider.appendChild(row)
+  overlayContainer.appendChild(row)
+  leftArrow.appendChild(leftArrowIcon)
+  arrowContainer.appendChild(leftArrow)
+  rightArrow.appendChild(rightArrowIcon)
+  arrowContainer.appendChild(rightArrow)
+  overlayContainer.appendChild(arrowContainer)
+  divider.appendChild(overlayContainer)
 
   product.images.forEach(function (image, imageIndex) {
     const imageElement = document.createElement('div')
@@ -120,7 +143,7 @@ function info (index, product, cb) {
     imageContainer.appendChild(imageElement)
     buttonContainer.appendChild(imageButton)
   })
-  divider.appendChild(buttonContainer)
+  overlayContainer.appendChild(buttonContainer)
 
   if (placement === products.length) {
     target.parentNode.appendChild(divider)
@@ -145,7 +168,21 @@ function closeProduct (index, cb) {
   }, animationDuration)
 }
 
+function slideshowArrow (direction) {
+  if (direction === 'right') {
+    const numberOfImages = products[currentlySelectedIndex].images.length - 1
+    if (sliderIndex < numberOfImages) {
+      slideshow(sliderIndex + 1)
+    }
+  } else if (direction === 'left') {
+    if (sliderIndex > 0) {
+      slideshow(sliderIndex - 1)
+    }
+  }
+}
+
 function slideshow (index) {
+  sliderIndex = index
   const imageContainer = document.getElementById('imageContainer')
   const imageLenght = imageContainer.childNodes[0].offsetWidth
   const position = imageLenght * index
