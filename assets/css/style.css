@@ -2,14 +2,39 @@ body {
   margin: 0;
   width: 100vw;
   min-height: 100vh;
-  background-color: rgb(255, 133, 133);
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 h1, h2, h3, p, a, input {
   font-family: 'Open Sans Condensed', sans-serif;
+  color: #fff;
+}
+
+body:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+
+  display: block;
+  background-image: url("../img/background.jpg");
+  background-size:cover;
+  height: 100vh;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: soft-light;
 }
 
 header {
@@ -26,12 +51,36 @@ header h1 {
 
 div.container {
   max-width: 1040px;
-  min-width: 360px;
+  /*min-width: 360px;*/
   background-color: #ffece0;
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
+  justify-content: space-around;
   flex-wrap: wrap;
+  z-index: 1;
+}
+
+.container .textbox {
+  display: flex;
+  padding: 20px 30px 0 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container .textbox * {
+  color: #000;
+  text-align: center;
+}
+
+.container .textbox p {
+  width: 100%;
+  margin: 5px 0 15px 0;
+}
+
+.container .textbox i {
+  padding: 0 10px;
 }
 
 .container .row {
@@ -64,25 +113,60 @@ div.container {
   border: 2px solid rgba(255, 133, 133, 0);
   transition: 0.3s;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container div.item:before {
+  content: "";
+  position: relative;
+  top: 197px;
+  left: 85px;
+  z-index: -1;
+
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(100, 100, 100, 1);
+
+  transform: translateY(-20px);
+  transition: transform 0.2s;
+}
+
+.container .item * {
+  position: relative;
+  bottom: 10px; /*counteract border*/
 }
 
 .container .item.selected {
-  border: 2px solid rgba(255, 133, 133, 1);
+  border: 2px solid rgba(100, 100, 100, 1);
+}
+
+.container .item.selected:before {
+  transform: translateY(0);
 }
 
 .container .item:hover {
-  border: 2px solid rgba(255, 133, 133, 1);
+  border: 2px solid rgba(100, 100, 100, 1);
 }
 
 .container .item h3 {
-  display: inline-block;
   padding: 0 4px;
   margin: 0;
-  background-color: rgba(255, 133, 133, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
 }
 
+.container .item h3:last-of-type {
+  background-color: rgba(0, 100, 160, 0.5);
+  margin-top: 10px;
+}
+
 div#divider {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #fff;
   overflow: hidden;
@@ -116,21 +200,30 @@ div#divider.closed {
   }
 }
 
+#divider div#overlayContainer {
+  display: flex;
+  height: 700px;
+  flex-direction: column;
+  z-index: 1;
+  justify-content: space-between;
+}
+
 #divider h1 {
-  color: #000;
+  margin: 20px;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 #divider .row {
+  /*position: relative;*/
   align-items: baseline;
+  flex-wrap: wrap;
   margin: 0;
-  position: relative;
-  bottom: 700px;
-  padding-top: 20px;
+  /*bottom: 700px;*/
+  height: auto;
 }
 
 #divider .row * {
-  margin: 0;
-  margin-right: 20px;
 }
 
 #divider .row h1 {
@@ -140,15 +233,15 @@ div#divider.closed {
 }
 
 #divider .row h1:first-of-type {
-  background-color: rgba(255, 133, 133, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #divider #imageContainer {
   display: flex;
-  height: 700px;
-  overflow: hidden;
+  height: 0;
   position: relative;
   transition: 0.3s;
+  z-index: 0;
 }
 
 #divider #imageContainer div {
@@ -159,10 +252,9 @@ div#divider.closed {
 }
 
 #divider #buttonContainer {
-  position: relative;
   display: flex;
   justify-content: center;
-  bottom: 100px;
+  margin-bottom: 30px;
 }
 
 #divider #buttonContainer a {
@@ -176,4 +268,41 @@ div#divider.closed {
 
 #divider #buttonContainer a:first-of-type {
   background-color: #fff;
+}
+
+#divider #arrowContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#divider #arrowContainer a {
+  padding: 20px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s;
+}
+
+#divider #arrowContainer a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+footer {
+  margin: 20px;
+}
+
+footer a {
+  padding: 10px 20px;
+  transition: 0.2s;
+}
+
+footer a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+@media only screen and (max-width: 500px) {
+  header h1 {
+    text-align: center;
+  }
 }
