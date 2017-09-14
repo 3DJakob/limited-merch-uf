@@ -1,6 +1,6 @@
 [
   {
-    "title": "Yeezy Cream",
+    "title": "Yeezy Cream 3850 SEK",
     "size": "11.5us",
     "images": [
       "1CREAM46.jpg",
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "title": "Yeezy Cream",
+    "title": "Yeezy Cream 3850 SEK",
     "size": "11us",
     "images": [
       "1CREAM45.jpg",
@@ -18,19 +18,28 @@
     ]
   },
   {
-    "title": "*****ANLÄNDER SNARAST***** Yeezy Breds",
+    "title": "Yeezy Breds 5000 SEK",
     "size": "7.5us",
     "images": [
       "1BREDS40.jpg"
+      "2BREDS40.jpg"
+      "3BREDS40.jpg"
     ]
   },
   {
-    "title": "Yeezy Zebra",
+    "title": "Yeezy Zebra 3950 SEK",
     "size": "9.5us",
     "images": [
       "1ZEBRA43.JPG",
       "2ZEBRA43.JPG"
       "3ZEBRA43.JPG"
+    ]
+  },
+  {
+    "title": "SUPREME T-SHIRT",
+    "size": "MEDIUM",
+    "images": [
+      "1SupremeM.jpg"
     ]
   }
 ]
