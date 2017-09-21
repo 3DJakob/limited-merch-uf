@@ -20,20 +20,29 @@ window.startApp = function () {
 function render () {
   const target = document.getElementById('product-container')
   products.forEach(function (product, index) {
-    const item = document.createElement('div')
-    const title = document.createElement('h3')
-    const size = document.createElement('h3')
-    item.className = 'item'
-    item.id = index
-    item.style.backgroundImage = 'url(assets/img/' + product.images[0] + ')'
-    item.addEventListener('click', function () {
+    const itemElement = document.createElement('div')
+    const titleElement = document.createElement('h3')
+    const sizeElement = document.createElement('h3')
+    const oldPriceElement = document.createElement('h3')
+    const priceElement = document.createElement('h3')
+
+    itemElement.className = 'item'
+    itemElement.id = index
+    itemElement.style.backgroundImage = 'url(assets/img/' + product.images[0] + ')'
+    itemElement.addEventListener('click', function () {
       openProduct(index, product)
     })
-    title.textContent = product.title
-    size.textContent = product.size
-    item.appendChild(title)
-    item.appendChild(size)
-    target.appendChild(item)
+    titleElement.textContent = product.title
+    sizeElement.textContent = product.size
+    oldPriceElement.textContent = product.oldPrice
+    oldPriceElement.className = 'oldPriceTag'
+    priceElement.textContent = product.price
+    priceElement.className = 'priceTag'
+    itemElement.appendChild(titleElement)
+    itemElement.appendChild(sizeElement)
+    itemElement.appendChild(oldPriceElement)
+    itemElement.appendChild(priceElement)
+    target.appendChild(itemElement)
   })
 }
 
@@ -93,8 +102,10 @@ function info (index, product, cb) {
   const imageContainer = document.createElement('div')
   const overlayContainer = document.createElement('div')
   const row = document.createElement('div')
-  const sizeElement = document.createElement('h1')
   const titleElement = document.createElement('h1')
+  const sizeElement = document.createElement('h1')
+  const priceElement = document.createElement('h1')
+  const oldPriceElement = document.createElement('h1')
   const buttonContainer = document.createElement('div')
   const arrowContainer = document.createElement('div')
   const leftArrow = document.createElement('a')
@@ -105,8 +116,12 @@ function info (index, product, cb) {
   divider.id = 'divider'
   overlayContainer.id = 'overlayContainer'
   row.className = 'row'
-  sizeElement.textContent = 'Storlek ' + product.size
   titleElement.textContent = product.title
+  sizeElement.textContent = 'Storlek ' + product.size
+  priceElement.textContent = product.price
+  priceElement.className = 'priceTag'
+  oldPriceElement.textContent = product.oldPrice
+  oldPriceElement.className = 'oldPriceTag'
   imageContainer.id = 'imageContainer'
   imageContainer.style.width = product.images.length * 100 + '%'
   buttonContainer.id = 'buttonContainer'
@@ -122,6 +137,8 @@ function info (index, product, cb) {
 
   row.appendChild(titleElement)
   row.appendChild(sizeElement)
+  row.appendChild(oldPriceElement)
+  row.appendChild(priceElement)
   divider.appendChild(imageContainer)
   overlayContainer.appendChild(row)
   leftArrow.appendChild(leftArrowIcon)
