@@ -2,7 +2,7 @@
   {
     "title": "Yeezy Cream",
     "size": "11.5us",
-    "price": "3500kr",
+    "price": "3500 SEK",
     "oldPrice": "3950kr",
     "images": [
       "1CREAM46.jpg",
@@ -11,37 +11,13 @@
     ]
   },
   {
-    "title": "Yeezy Cream 3850 SEK",
-    "size": "11us",
-    "images": [
-      "1CREAM45.jpg",
-      "2CREAM45.jpg",
-      "3CREAM45.jpg"
-    ]
-  },
-  {
-    "title": "Yeezy Breds 5000 SEK",
+    "title": "Yeezy Breds",
     "size": "7.5us",
+    "price": "5000 SEK",
     "images": [
       "1BREDS40.jpg",
       "2BREDS40.jpg",
       "3BREDS40.jpg"
-    ]
-  },
-  {
-    "title": "Yeezy Zebra 3950 SEK",
-    "size": "9.5us",
-    "images": [
-      "1ZEBRA43.JPG",
-      "2ZEBRA43.JPG",
-      "3ZEBRA43.JPG"
-    ]
-  },
-  {
-    "title": "SUPREME T-SHIRT 950 SEK",
-    "size": "MEDIUM",
-    "images": [
-      "1SupremeM.jpg"
     ]
   }
 ]
