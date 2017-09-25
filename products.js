@@ -40,8 +40,12 @@ function render () {
     priceElement.className = 'priceTag'
     itemElement.appendChild(titleElement)
     itemElement.appendChild(sizeElement)
-    itemElement.appendChild(oldPriceElement)
-    itemElement.appendChild(priceElement)
+    if (product.oldPrice != null) {
+      itemElement.appendChild(oldPriceElement)
+    }
+    if (product.price != null) {
+      itemElement.appendChild(priceElement)
+    }
     target.appendChild(itemElement)
   })
 }
