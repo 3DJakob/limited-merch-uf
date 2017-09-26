@@ -141,8 +141,12 @@ function info (index, product, cb) {
 
   row.appendChild(titleElement)
   row.appendChild(sizeElement)
-  row.appendChild(oldPriceElement)
-  row.appendChild(priceElement)
+  if (product.oldPrice != null) {
+    row.appendChild(oldPriceElement)
+  }
+  if (product.price != null) {
+    row.appendChild(priceElement)
+  }
   divider.appendChild(imageContainer)
   overlayContainer.appendChild(row)
   leftArrow.appendChild(leftArrowIcon)
