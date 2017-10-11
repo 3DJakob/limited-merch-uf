@@ -1,24 +1,74 @@
 [
   {
-    "title": "Yeezy Cream",
-    "size": "11.5us",
-    "price": "3500 SEK",
-    "oldPrice": "3950kr",
+    "title": "NMD Japan boost",
+    "size": "46EU",
+    "price": "1700 SEK",
+    "oldPrice": "",
     "images": [
-      "1CREAM46.jpg",
-      "2CREAM46.jpg",
-      "3CREAM46.jpg"
+      "IMG_1810.JPG"
     ]
   },
   {
-    "title": "Yeezy Breds",
-    "size": "7.5us",
-    "price": "4500 SEK",
-    "oldPrice": "5000 SEK",
+    "title": "Supreme tröja",
+    "size": "Large",
+    "price": "2500 SEK",
+    "oldPrice": "",
     "images": [
-      "1BREDS40.jpg",
-      "2BREDS40.jpg",
-      "3BREDS40.jpg"
+      "IMG_2156.JPG"
+    ]
+  },
+  {
+    "title": "Supreme tröja",
+    "size": "Medium",
+    "price": "900 SEK",
+    "oldPrice": "",
+    "images": [
+      "IMG_2155.JPG"
+    ]
+  },
+  {
+    "title": "Gucci skärp",
+    "size": "110cm",
+    "price": "2300 SEK",
+    "oldPrice": "",
+    "images": [
+      "IMG_2168.JPG"
+    ]
+  },
+  {
+    "title": "Yeezy Cream",
+    "size": "42.5EUR",
+    "price": "",
+    "oldPrice": "",
+    "images": [
+      "IMG_1986.JPG"
+    ]
+  },
+  {
+    "title": "Yeezy Cream",
+    "size": "40EUR",
+    "price": "",
+    "oldPrice": "",
+    "images": [
+      "IMG_1864.JPG"
+    ]
+  },
+  {
+    "title": "Yeezy zebra",
+    "size": "41⅓EUR",
+    "price": "",
+    "oldPrice": "",
+    "images": [
+      "IMG_2036.JPG"
+    ]
+  },
+  {
+    "title": "Stone Island jacka",
+    "size": "Large",
+    "price": "",
+    "oldPrice": "",
+    "images": [
+      "IMG_2164.JPG"
     ]
   }
 ]
