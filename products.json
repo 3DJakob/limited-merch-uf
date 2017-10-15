@@ -27,15 +27,6 @@
     ]
   },
   {
-    "title": "Gucci skärp",
-    "size": "110cm",
-    "price": "2300 SEK",
-    "oldPrice": "",
-    "images": [
-      "IMG_2168.JPG"
-    ]
-  },
-  {
     "title": "Yeezy Cream",
     "size": "42.5EUR",
     "price": "3400 SEK",
@@ -45,30 +36,12 @@
     ]
   },
   {
-    "title": "Yeezy Cream",
-    "size": "40EUR",
-    "price": "3600 SEK",
-    "oldPrice": "3800 SEK",
-    "images": [
-      "IMG_1864.JPG"
-    ]
-  },
-  {
     "title": "Yeezy zebra",
     "size": "41⅓EUR",
     "price": "4000 SEK",
     "oldPrice": "4250 SEK",
     "images": [
       "IMG_2036.JPG"
-    ]
-  },
-  {
-    "title": "Stone Island jacka",
-    "size": "Large",
-    "price": "2500 SEK",
-    "oldPrice": "",
-    "images": [
-      "IMG_2164.JPG"
     ]
   }
 ]
